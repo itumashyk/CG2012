@@ -1,36 +1,38 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "QDebug"
-#include <QGraphicsPixmapItem>
+#include <QFileDialog>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-     ui->setupUi(this);
-//    QString fileName("ussr.png");
-//    QGraphicsScene scene;
-//    scene.addPixmap(QPixmap(fileName));
-//    delete ui->graphicsView;
-//    ui->graphicsView = new QGraphicsView(&scene);
-//    //QGraphicsPixmapItem item (pixmap);
-//    //scene.addItem(&item);
-
-
-//    qDebug() << ui->graphicsView->items().count();
-//    ui->graphicsView->show();
-
-
-    QGraphicsScene scene;
-    QGraphicsView view(&scene);
-    QGraphicsPixmapItem item(QPixmap("ussr.png"));
-    scene.addItem(&item);
-    view.show();
-
-//   QGraphicsScene scene; scene.addPixmap(QPixmap(fileName)); QGraphicsView view(&scene); view.show()
+    ui->setupUi(this);
+    setPixmap(QPixmap(QString("ussr.png")));
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+QPixmap* MainWindow:: pixmap()
+{
+    return curPixmap;
+}
+
+void MainWindow::setPixmap(const QPixmap &pixmap)
+{
+    curPixmap = const_cast<QPixmap*>(&pixmap);
+    ui->mainLabel->setPixmap(pixmap);
+}
+
+void MainWindow::on_actionOpen_activated()
+{
+    QString file = QFileDialog::getOpenFileName(this,
+     "Open Image", QString(), "Image Files (*.png *.jpg *.bmp)");
+
+     if (!file.isNull()) {
+         setPixmap(QPixmap(file));
+     }
 }
