@@ -12,10 +12,14 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    cgapplication.cpp
+    cgapplication.cpp \
+    bitmapfilter.cpp \
+    basefilter.cpp
 
 HEADERS  += mainwindow.h \
-    cgapplication.h
+    cgapplication.h \
+    bitmapfilter.h \
+    basefilter.h
 
 FORMS    += mainwindow.ui
 

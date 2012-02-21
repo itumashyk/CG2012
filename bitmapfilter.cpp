@@ -9,8 +9,7 @@ QImage BitmapFilter::process(QImage &image)
 {
     if (image.depth() != QImage::Format_Mono)
     {
-        QMessageBox::warning(0, "Filter a bitmap",
-                    "Selected image isn't black\white");
+        QMessageBox::warning(0, "Filter a bitmap", "Selected image isn't black\white");
         return image;
     }
     int height = image.height();
@@ -43,10 +42,6 @@ int BitmapFilter::getBestPixel(QImage &image, int x, int y)
             else
                 ++ones;
         }
-    }
-    if (zeros + ones != 8)
-    {
-        qWarning() << x << " " << y;
     }
     return zeros >= ones ? 0 : 1;
 }

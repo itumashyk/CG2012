@@ -62,4 +62,5 @@ void MainWindow::on_zoomOut_clicked()
         scale = 1.0;
     }
     curPixmap->setScale(scale);
+    ui->graphicsView->invalidateScene();
 }
