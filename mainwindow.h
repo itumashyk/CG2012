@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QGraphicsPixmapItem>
 
 namespace Ui {
     class MainWindow;
@@ -15,15 +16,21 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-    QPixmap* pixmap();
+    QGraphicsPixmapItem* pixmap();
     void setPixmap(const QPixmap &pixmap);
 
 private slots:
     void on_actionOpen_activated();
 
+    void on_zoomIn_clicked();
+
+    void on_zoomOut_clicked();
+
 private:
     Ui::MainWindow *ui;
-    QPixmap *curPixmap;
+    QGraphicsPixmapItem *curPixmap;
+    qreal scale;
+    qreal ZOOM_RATIO;
 };
 
 #endif // MAINWINDOW_H
