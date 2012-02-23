@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "QDebug"
 #include <QFileDialog>
+#include <bitmapfilter.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -9,6 +10,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     setPixmap(QPixmap(QString("ussr.png")));
+    scale = 1.0;
+    ZOOM_RATIO = 2.0;
 }
 
 MainWindow::~MainWindow()
@@ -16,15 +19,18 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-QPixmap* MainWindow:: pixmap()
+QGraphicsPixmapItem* MainWindow:: pixmap()
 {
     return curPixmap;
 }
 
 void MainWindow::setPixmap(const QPixmap &pixmap)
 {
-    curPixmap = const_cast<QPixmap*>(&pixmap);
-    ui->mainLabel->setPixmap(pixmap);
+    curPixmap = new QGraphicsPixmapItem(pixmap);
+    QGraphicsScene* scene = new QGraphicsScene;
+    scene->addItem(curPixmap);
+    ui->graphicsView->setScene(scene);
+    ui->graphicsView->invalidateScene();
 }
 
 void MainWindow::on_actionOpen_activated()
@@ -32,7 +38,29 @@ void MainWindow::on_actionOpen_activated()
     QString file = QFileDialog::getOpenFileName(this,
      "Open Image", QString(), "Image Files (*.png *.jpg *.bmp)");
 
+    QImage image(file);
+    BitmapFilter filter;
+    QImage result = filter.process(image);
+
      if (!file.isNull()) {
-         setPixmap(QPixmap(file));
+         QPixmap pixmap = QPixmap::fromImage(result);
+         setPixmap(pixmap);
      }
+}
+
+void MainWindow::on_zoomIn_clicked()
+{
+    scale *= ZOOM_RATIO;
+    curPixmap->setScale(scale);
+}
+
+void MainWindow::on_zoomOut_clicked()
+{
+    scale /= ZOOM_RATIO;
+    if (scale < 1.0)
+    {
+        scale = 1.0;
+    }
+    curPixmap->setScale(scale);
+    ui->graphicsView->invalidateScene();
 }
