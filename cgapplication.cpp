@@ -1,5 +1,5 @@
 #include "cgapplication.h"
-#include "mainwindow.h"
+#include "cgmainwindow.h"
 
 CGApplication::CGApplication(int & argc, char ** argv):
     QApplication(argc, argv)
@@ -9,7 +9,7 @@ CGApplication::CGApplication(int & argc, char ** argv):
 
 int CGApplication:: exec()
 {
-    MainWindow w;
+    CGMainWindow w;
     w.show();
     return QApplication::exec();
 }

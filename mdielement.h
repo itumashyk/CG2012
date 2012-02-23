@@ -1,36 +1,37 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef MDIELEMENT_H
+#define MDIELEMENT_H
 
-#include <QMainWindow>
+#include <QMdiSubWindow>
 #include <QGraphicsPixmapItem>
 
 namespace Ui {
-    class MainWindow;
+    class MdiElement;
 }
 
-class MainWindow : public QMainWindow
+class MdiElement : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+    explicit MdiElement(QWidget *parent = 0);
+    ~MdiElement();
 
     QGraphicsPixmapItem* pixmap();
     void setPixmap(const QPixmap &pixmap);
 
 private slots:
-    void on_actionOpen_activated();
 
     void on_zoomIn_clicked();
 
     void on_zoomOut_clicked();
 
 private:
-    Ui::MainWindow *ui;
     QGraphicsPixmapItem *curPixmap;
     qreal scale;
     qreal ZOOM_RATIO;
+
+private:
+    Ui::MdiElement *ui;
 };
 
-#endif // MAINWINDOW_H
+#endif // MDIELEMENT_H

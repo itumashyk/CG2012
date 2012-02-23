@@ -11,16 +11,41 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
     cgapplication.cpp \
     bitmapfilter.cpp \
-    basefilter.cpp
+    basefilter.cpp \
+    cgmainwindow.cpp \
+    mdielement.cpp
 
-HEADERS  += mainwindow.h \
+HEADERS  += \
     cgapplication.h \
     bitmapfilter.h \
-    basefilter.h
+    basefilter.h \
+    cgmainwindow.h \
+    mdielement.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    cgmainwindow.ui \
+    mdielement.ui
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
