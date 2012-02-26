@@ -18,6 +18,8 @@ public:
 private slots:
     void on_actionOpen_activated();
 
+    void on_actionSimple_Filter_activated();
+
 private:
     Ui::CGMainWindow *ui;
 };

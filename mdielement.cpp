@@ -10,8 +10,6 @@ MdiElement::MdiElement(QWidget *parent) :
 {
     ui->setupUi(this);
     setPixmap(QPixmap(QString("ussr.png")));
-    scale = 1.0;
-    ZOOM_RATIO = 2.0;
 }
 
 MdiElement::~MdiElement()
@@ -19,9 +17,9 @@ MdiElement::~MdiElement()
     delete ui;
 }
 
-QGraphicsPixmapItem* MdiElement:: pixmap()
+QPixmap MdiElement:: pixmap()
 {
-    return curPixmap;
+    return curPixmap->pixmap();
 }
 
 void MdiElement::setPixmap(const QPixmap &pixmap)
@@ -34,20 +32,16 @@ void MdiElement::setPixmap(const QPixmap &pixmap)
 }
 
 
-void MdiElement::on_zoomIn_clicked()
-{
-    scale *= ZOOM_RATIO;
-    curPixmap->setScale(scale);
-}
 
-void MdiElement::on_zoomOut_clicked()
+void MdiElement:: wheelEvent(QWheelEvent * event)
 {
-    scale /= ZOOM_RATIO;
-    if (scale < 1.0)
-    {
-        scale = 1.0;
+
+    if(event->delta() > 0){
+    ui->graphicsView->scale(scaleFactor, scaleFactor);
+    } else{
+    ui->graphicsView->scale(1/scaleFactor, 1/scaleFactor);
     }
-    curPixmap->setScale(scale);
-    ui->graphicsView->invalidateScene();
+    event->accept();
+    //event->ignore();
 }
 

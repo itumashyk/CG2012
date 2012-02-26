@@ -41,12 +41,24 @@
     </property>
     <addaction name="actionOpen"/>
    </widget>
+   <widget class="QMenu" name="menuFilter">
+    <property name="title">
+     <string>Filter</string>
+    </property>
+    <addaction name="actionSimple_Filter"/>
+   </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuFilter"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionOpen">
    <property name="text">
     <string>Open...</string>
+   </property>
+  </action>
+  <action name="actionSimple_Filter">
+   <property name="text">
+    <string>Simple Filter</string>
    </property>
   </action>
  </widget>

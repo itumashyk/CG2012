@@ -24,9 +24,10 @@ HEADERS  += \
     cgmainwindow.h \
     mdielement.h
 
-FORMS    += mainwindow.ui \
+FORMS    += \
     cgmainwindow.ui \
     mdielement.ui
+
 
 
 

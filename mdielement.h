@@ -16,19 +16,15 @@ public:
     explicit MdiElement(QWidget *parent = 0);
     ~MdiElement();
 
-    QGraphicsPixmapItem* pixmap();
+    QPixmap pixmap();
     void setPixmap(const QPixmap &pixmap);
 
-private slots:
-
-    void on_zoomIn_clicked();
-
-    void on_zoomOut_clicked();
+protected:
+    virtual void wheelEvent(QWheelEvent * event);
 
 private:
     QGraphicsPixmapItem *curPixmap;
-    qreal scale;
-    qreal ZOOM_RATIO;
+    static const qreal scaleFactor = 0.8;
 
 private:
     Ui::MdiElement *ui;
