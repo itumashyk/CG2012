@@ -2,6 +2,7 @@
 #define CGMAINWINDOW_H
 
 #include <QMainWindow>
+#include <basefilter.h>
 
 namespace Ui {
     class CGMainWindow;
@@ -20,8 +21,12 @@ private slots:
 
     void on_actionSimple_Filter_activated();
 
+    void on_actionGrayscale_activated();
+
+
 private:
     Ui::CGMainWindow *ui;
+    void applyFilter(BaseFilter *filter);
 };
 
 #endif // CGMAINWINDOW_H

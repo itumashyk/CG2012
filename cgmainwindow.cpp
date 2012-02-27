@@ -5,6 +5,7 @@
 #include "mdielement.h"
 #include "QFileDialog"
 #include "bitmapfilter.h"
+#include "grayscalefilter.h"
 
 CGMainWindow::CGMainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -28,14 +29,9 @@ void CGMainWindow::on_actionOpen_activated()
     QString file = QFileDialog::getOpenFileName(this,
      "Open Image", QString(), "Image Files (*.png *.jpg *.bmp)");
 
-//    QImage image(file);
-//    BitmapFilter filter;
-//    QImage result = filter.process(image);
-
      if (!file.isNull())
      {
 
-         //QPixmap pixmap = QPixmap::fromImage(result);
 
          QPixmap pixmap(file);
          MdiElement* element = new MdiElement();
@@ -48,14 +44,25 @@ void CGMainWindow::on_actionOpen_activated()
 
 void CGMainWindow::on_actionSimple_Filter_activated()
 {
+   BitmapFilter filter;
+   applyFilter(&filter);
+}
+
+void CGMainWindow::on_actionGrayscale_activated()
+{
+    GrayscaleFilter filter;
+    applyFilter(&filter);
+}
+
+void CGMainWindow::applyFilter(BaseFilter* filter)
+{
     QMdiSubWindow *active = ui->mdiArea->activeSubWindow();
     if (active != NULL)
     {
         MdiElement* activeElement = dynamic_cast<MdiElement*> (active->widget());
 
         QImage image =  activeElement->pixmap().toImage();
-        BitmapFilter filter;
-        QImage result = filter.process(image);
+        QImage result = filter->process(image);
         QPixmap pixmap = QPixmap::fromImage(result);
         activeElement->setPixmap(pixmap);
     }

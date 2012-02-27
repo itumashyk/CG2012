@@ -15,18 +15,22 @@ SOURCES += main.cpp\
     bitmapfilter.cpp \
     basefilter.cpp \
     cgmainwindow.cpp \
-    mdielement.cpp
+    mdielement.cpp \
+    grayscalefilter.cpp
 
 HEADERS  += \
     cgapplication.h \
     bitmapfilter.h \
     basefilter.h \
     cgmainwindow.h \
-    mdielement.h
+    mdielement.h \
+    grayscalefilter.h
 
 FORMS    += \
     cgmainwindow.ui \
     mdielement.ui
+
+
 
 
 
