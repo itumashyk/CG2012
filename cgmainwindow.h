@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <basefilter.h>
+#include "dialoghistogramm.h"
 
 namespace Ui {
     class CGMainWindow;
@@ -24,9 +25,14 @@ private slots:
     void on_actionGrayscale_activated();
 
 
+    void on_actionInvert_Colors_activated();
+
+    void on_actionShow_Histogram_activated();
+
 private:
     Ui::CGMainWindow *ui;
     void applyFilter(BaseFilter *filter);
+    DialogHistogramm* histogramDialog;
 };
 
 #endif // CGMAINWINDOW_H

@@ -2,4 +2,5 @@
 
 BaseFilter::BaseFilter()
 {
+
 }

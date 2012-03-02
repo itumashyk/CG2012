@@ -16,7 +16,10 @@ SOURCES += main.cpp\
     basefilter.cpp \
     cgmainwindow.cpp \
     mdielement.cpp \
-    grayscalefilter.cpp
+    grayscalefilter.cpp \
+    invertfilter.cpp \
+    dialoghistogramm.cpp \
+    histogramwidget.cpp
 
 HEADERS  += \
     cgapplication.h \
@@ -24,11 +27,28 @@ HEADERS  += \
     basefilter.h \
     cgmainwindow.h \
     mdielement.h \
-    grayscalefilter.h
+    grayscalefilter.h \
+    invertfilter.h \
+    dialoghistogramm.h \
+    histogramwidget.h
 
 FORMS    += \
     cgmainwindow.ui \
-    mdielement.ui
+    mdielement.ui \
+    dialoghistogramm.ui
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

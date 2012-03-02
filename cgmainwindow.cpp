@@ -6,13 +6,14 @@
 #include "QFileDialog"
 #include "bitmapfilter.h"
 #include "grayscalefilter.h"
+#include "invertfilter.h"
 
 CGMainWindow::CGMainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::CGMainWindow)
 {
     ui->setupUi(this);
-
+    histogramDialog = NULL;
 
 #   ifdef TUMASHYK
     ui->mdiArea->setViewMode(QMdiArea::TabbedView);
@@ -22,6 +23,7 @@ CGMainWindow::CGMainWindow(QWidget *parent) :
 CGMainWindow::~CGMainWindow()
 {
     delete ui;
+    delete histogramDialog;
 }
 
 void CGMainWindow::on_actionOpen_activated()
@@ -66,4 +68,19 @@ void CGMainWindow::applyFilter(BaseFilter* filter)
         QPixmap pixmap = QPixmap::fromImage(result);
         activeElement->setPixmap(pixmap);
     }
+}
+
+void CGMainWindow::on_actionInvert_Colors_activated()
+{
+    InvertFilter filter;
+    applyFilter(&filter);
+}
+
+void CGMainWindow::on_actionShow_Histogram_activated()
+{
+    if (histogramDialog == NULL)
+    {
+        histogramDialog = new DialogHistogramm(this);
+    }
+    histogramDialog->show();
 }

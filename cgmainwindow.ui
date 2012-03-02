@@ -47,9 +47,17 @@
     </property>
     <addaction name="actionSimple_Filter"/>
     <addaction name="actionGrayscale"/>
+    <addaction name="actionInvert_Colors"/>
+   </widget>
+   <widget class="QMenu" name="menuCommands">
+    <property name="title">
+     <string>Commands</string>
+    </property>
+    <addaction name="actionShow_Histogram"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuFilter"/>
+   <addaction name="menuCommands"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionOpen">
@@ -65,6 +73,16 @@
   <action name="actionGrayscale">
    <property name="text">
     <string>Grayscale</string>
+   </property>
+  </action>
+  <action name="actionInvert_Colors">
+   <property name="text">
+    <string>Invert Colors</string>
+   </property>
+  </action>
+  <action name="actionShow_Histogram">
+   <property name="text">
+    <string>Show Histogram...</string>
    </property>
   </action>
  </widget>
