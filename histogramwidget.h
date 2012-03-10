@@ -9,12 +9,19 @@ class HistogramWidget : public QWidget
 public:
     explicit HistogramWidget(QWidget *parent = 0);
 
+    void loadData(QVector<int> data);
+
 protected:
     virtual void paintEvent (QPaintEvent* event);
 
 signals:
 
 public slots:
+
+private:
+    QVector<double> data;
+    double scaleFactor;
+
 
 };
 

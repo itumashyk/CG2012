@@ -15,8 +15,12 @@ public:
     explicit DialogHistogramm(QWidget *parent = 0);
     ~DialogHistogramm();
 
+    QVector<int> data();
+    void show(QVector<int> data);
+
 private:
     Ui::DialogHistogramm *ui;
+    QVector<int> theData;
 };
 
 #endif // DIALOGHISTOGRAMM_H

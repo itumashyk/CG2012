@@ -7,6 +7,7 @@
 #include "bitmapfilter.h"
 #include "grayscalefilter.h"
 #include "invertfilter.h"
+#include "cgalgorithm.h"
 
 CGMainWindow::CGMainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -78,9 +79,16 @@ void CGMainWindow::on_actionInvert_Colors_activated()
 
 void CGMainWindow::on_actionShow_Histogram_activated()
 {
-    if (histogramDialog == NULL)
+    QMdiSubWindow *active = ui->mdiArea->activeSubWindow();
+    if (active != NULL)
     {
-        histogramDialog = new DialogHistogramm(this);
+        MdiElement* activeElement = dynamic_cast<MdiElement*> (active->widget());
+
+        QImage image =  activeElement->pixmap().toImage();
+        if (histogramDialog == NULL)
+        {
+            histogramDialog = new DialogHistogramm(this);
+        }
+        histogramDialog->show(CGAlgorithm::calculatePixels(image));
     }
-    histogramDialog->show();
 }

@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     grayscalefilter.cpp \
     invertfilter.cpp \
     dialoghistogramm.cpp \
-    histogramwidget.cpp
+    histogramwidget.cpp \
+    cgalgorithm.cpp
 
 HEADERS  += \
     cgapplication.h \
@@ -30,12 +31,15 @@ HEADERS  += \
     grayscalefilter.h \
     invertfilter.h \
     dialoghistogramm.h \
-    histogramwidget.h
+    histogramwidget.h \
+    cgalgorithm.h
 
 FORMS    += \
     cgmainwindow.ui \
     mdielement.ui \
     dialoghistogramm.ui
+
+
 
 
 
