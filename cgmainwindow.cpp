@@ -1,0 +1,125 @@
+#include "cgmainwindow.h"
+#include "ui_cgmainwindow.h"
+#include "mdielement.h"
+#include "QMdiSubWindow"
+#include "mdielement.h"
+#include "QFileDialog"
+#include "bitmapfilter.h"
+#include "grayscalefilter.h"
+#include "invertfilter.h"
+#include "cgalgorithm.h"
+#include "tresholdfilter.h"
+
+CGMainWindow::CGMainWindow(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::CGMainWindow)
+{
+    ui->setupUi(this);
+    histogramDialog = NULL;
+
+#   ifdef TUMASHYK
+    ui->mdiArea->setViewMode(QMdiArea::TabbedView);
+#   endif
+}
+
+CGMainWindow::~CGMainWindow()
+{
+    delete ui;
+    delete histogramDialog;
+}
+
+void CGMainWindow::on_actionOpen_activated()
+{
+    QString file = QFileDialog::getOpenFileName(this,
+     "Open Image", QString(), "Image Files (*.png *.jpg *.bmp)");
+
+     if (!file.isNull())
+     {
+
+
+         QPixmap pixmap(file);
+         MdiElement* element = new MdiElement();
+         element->setPixmap(pixmap);
+         element->setWindowTitle(file);
+         ui->mdiArea->addSubWindow(element)->setAttribute(Qt::WA_DeleteOnClose);
+         element->show();
+     }
+}
+
+void CGMainWindow::on_actionSimple_Filter_activated()
+{
+   BitmapFilter filter;
+   applyFilter(&filter);
+}
+
+void CGMainWindow::on_actionGrayscale_activated()
+{
+    GrayscaleFilter filter;
+    applyFilter(&filter);
+}
+
+void CGMainWindow::applyFilter(BaseFilter* filter)
+{
+    QMdiSubWindow *active = ui->mdiArea->activeSubWindow();
+    if (active != NULL)
+    {
+        MdiElement* activeElement = dynamic_cast<MdiElement*> (active->widget());
+
+        QImage image =  activeElement->pixmap().toImage();
+        QImage result = filter->process(image);
+        QPixmap pixmap = QPixmap::fromImage(result);
+        activeElement->setPixmap(pixmap);
+    }
+}
+
+void CGMainWindow::on_actionInvert_Colors_activated()
+{
+    InvertFilter filter;
+    applyFilter(&filter);
+}
+
+void CGMainWindow::on_actionShow_Histogram_activated()
+{
+    QMdiSubWindow *active = ui->mdiArea->activeSubWindow();
+    if (active != NULL)
+    {
+        MdiElement* activeElement = dynamic_cast<MdiElement*> (active->widget());
+
+        QImage image =  activeElement->pixmap().toImage();
+        if (histogramDialog == NULL)
+        {
+            histogramDialog = new DialogHistogramm(this);
+        }
+        histogramDialog->show(CGAlgorithm::calculatePixels(image));
+    }
+}
+
+void CGMainWindow::on_actionTreshold_activated()
+{
+    bool ok;
+    int treshold = QInputDialog::getInt(this, "Treshold", "Enter treshold", 0,
+        0, 255, 1, &ok);
+    if (ok)
+    {
+        TresholdFilter filter(treshold);
+        applyFilter(&filter);
+    }
+}
+
+void CGMainWindow::on_actionSave_activated()
+{
+    QMdiSubWindow *active = ui->mdiArea->activeSubWindow();
+    if (active != NULL)
+    {
+        QString path = QFileDialog::getSaveFileName(this, QString(), QString(),
+        "PNG (*.png);; JPG (*.jpg);; BMP(*.bmp);; JPEG(*.jpeg);; TIFF (*.tiff);; PPM (*.ppm)");
+        if (path != "")
+        {
+            MdiElement* activeElement = dynamic_cast<MdiElement*> (active->widget());
+            int comressionLevel = QInputDialog::getInt(this, "Compression Level", "Choose compession level", 50,
+                0, 100, 1);
+            activeElement->pixmap().save(path, 0, 100 - comressionLevel);
+        }
+    }
+
+}
