@@ -8,7 +8,10 @@
 #include "grayscalefilter.h"
 #include "invertfilter.h"
 #include "cgalgorithm.h"
+<<<<<<< HEAD
 #include "tresholdfilter.h"
+=======
+>>>>>>> c5b5148581fd6d72f20037cc03ec77b6b58dc003
 
 CGMainWindow::CGMainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -93,6 +96,7 @@ void CGMainWindow::on_actionShow_Histogram_activated()
         histogramDialog->show(CGAlgorithm::calculatePixels(image));
     }
 }
+<<<<<<< HEAD
 
 void CGMainWindow::on_actionTreshold_activated()
 {
@@ -123,3 +127,5 @@ void CGMainWindow::on_actionSave_activated()
     }
 
 }
+=======
+>>>>>>> c5b5148581fd6d72f20037cc03ec77b6b58dc003

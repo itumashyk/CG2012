@@ -21,7 +21,10 @@ public slots:
 private:
     QVector<double> data;
     double scaleFactor;
+<<<<<<< HEAD
     int maxChanel;
+=======
+>>>>>>> c5b5148581fd6d72f20037cc03ec77b6b58dc003
 
 
 };

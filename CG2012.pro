@@ -20,8 +20,12 @@ SOURCES += main.cpp\
     invertfilter.cpp \
     dialoghistogramm.cpp \
     histogramwidget.cpp \
+<<<<<<< HEAD
     cgalgorithm.cpp \
     tresholdfilter.cpp
+=======
+    cgalgorithm.cpp
+>>>>>>> c5b5148581fd6d72f20037cc03ec77b6b58dc003
 
 HEADERS  += \
     cgapplication.h \
@@ -33,8 +37,12 @@ HEADERS  += \
     invertfilter.h \
     dialoghistogramm.h \
     histogramwidget.h \
+<<<<<<< HEAD
     cgalgorithm.h \
     tresholdfilter.h
+=======
+    cgalgorithm.h
+>>>>>>> c5b5148581fd6d72f20037cc03ec77b6b58dc003
 
 FORMS    += \
     cgmainwindow.ui \
@@ -80,5 +88,8 @@ FORMS    += \
 
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c5b5148581fd6d72f20037cc03ec77b6b58dc003
