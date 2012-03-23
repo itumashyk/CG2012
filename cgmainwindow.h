@@ -29,13 +29,10 @@ private slots:
 
     void on_actionShow_Histogram_activated();
 
-<<<<<<< HEAD
     void on_actionTreshold_activated();
 
     void on_actionSave_activated();
 
-=======
->>>>>>> c5b5148581fd6d72f20037cc03ec77b6b58dc003
 private:
     Ui::CGMainWindow *ui;
     void applyFilter(BaseFilter *filter);

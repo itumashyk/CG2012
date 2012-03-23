@@ -40,10 +40,7 @@
      <string>File</string>
     </property>
     <addaction name="actionOpen"/>
-<<<<<<< HEAD
     <addaction name="actionSave"/>
-=======
->>>>>>> c5b5148581fd6d72f20037cc03ec77b6b58dc003
    </widget>
    <widget class="QMenu" name="menuFilter">
     <property name="title">
@@ -52,10 +49,7 @@
     <addaction name="actionSimple_Filter"/>
     <addaction name="actionGrayscale"/>
     <addaction name="actionInvert_Colors"/>
-<<<<<<< HEAD
     <addaction name="actionTreshold"/>
-=======
->>>>>>> c5b5148581fd6d72f20037cc03ec77b6b58dc003
    </widget>
    <widget class="QMenu" name="menuCommands">
     <property name="title">
@@ -93,7 +87,6 @@
     <string>Show Histogram...</string>
    </property>
   </action>
-<<<<<<< HEAD
   <action name="actionTreshold">
    <property name="text">
     <string>Treshold...</string>
@@ -104,8 +97,6 @@
     <string>Save...</string>
    </property>
   </action>
-=======
->>>>>>> c5b5148581fd6d72f20037cc03ec77b6b58dc003
  </widget>
  <resources/>
  <connections/>
