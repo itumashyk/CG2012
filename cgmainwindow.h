@@ -33,6 +33,8 @@ private slots:
 
     void on_actionSave_activated();
 
+    void on_actionAutomatic_Treshold_activated();
+
 private:
     Ui::CGMainWindow *ui;
     void applyFilter(BaseFilter *filter);

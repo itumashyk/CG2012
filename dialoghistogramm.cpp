@@ -6,8 +6,6 @@ DialogHistogramm::DialogHistogramm(QWidget *parent) :
     ui(new Ui::DialogHistogramm)
 {
     ui->setupUi(this);
-
-
 }
 
 QVector<int> DialogHistogramm:: data()

@@ -5,7 +5,6 @@
 class BaseFilter
 {
 public:
-    BaseFilter();
     virtual QImage process(QImage& image) = 0;
 };
 

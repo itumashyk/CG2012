@@ -13,15 +13,16 @@ TEMPLATE = app
 SOURCES += main.cpp\
     cgapplication.cpp \
     bitmapfilter.cpp \
-    basefilter.cpp \
     cgmainwindow.cpp \
     mdielement.cpp \
     grayscalefilter.cpp \
     invertfilter.cpp \
     dialoghistogramm.cpp \
     histogramwidget.cpp \
-    cgalgorithm.cpp \
-    tresholdfilter.cpp
+    tresholdfilter.cpp \
+    automaticbinaryfilter.cpp \
+    calculatepixels.cpp \
+    automaticbianarasationtreshold.cpp
 
 HEADERS  += \
     cgapplication.h \
@@ -34,12 +35,21 @@ HEADERS  += \
     dialoghistogramm.h \
     histogramwidget.h \
     cgalgorithm.h \
-    tresholdfilter.h
+    tresholdfilter.h \
+    automaticbinaryfilter.h
 
 FORMS    += \
     cgmainwindow.ui \
     mdielement.ui \
     dialoghistogramm.ui
+
+
+
+
+
+
+
+
 
 
 
