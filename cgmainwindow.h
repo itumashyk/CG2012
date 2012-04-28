@@ -33,6 +33,14 @@ private slots:
 
     void on_actionSave_activated();
 
+    void on_actionAverage_Filter_activated();
+
+    void on_actionAverage_Filter_with_size_activated();
+
+    void on_actionMedian_Filter_activated();
+
+    void on_actionMedian_Filter_with_size_activated();
+
 private:
     Ui::CGMainWindow *ui;
     void applyFilter(BaseFilter *filter);

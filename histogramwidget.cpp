@@ -46,8 +46,10 @@ void  HistogramWidget::paintEvent (QPaintEvent* event)
 
 #    ifdef TUMASHYK
      QPen pen(Qt::blue);
+     QBrush brush(Qt::blue);
 #    else
      QPen pen (Qt::red);
+     QBrush brush(Qt::red);
 #    endif
      pen.setWidth(2);
      painter.setPen(pen);
@@ -61,7 +63,7 @@ void  HistogramWidget::paintEvent (QPaintEvent* event)
             int x1 = per1 * i;
             int x2 = x1 + per1;
             int y = h - (int)(h * data[i]) + 5;
-            painter.drawLine(x1 + dx, y, x2 + dx, y);
+            painter.fillRect(x1 + dx, y, per1, (h * data[i]), brush);
          }
      }
 

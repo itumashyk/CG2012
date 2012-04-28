@@ -9,6 +9,8 @@
 #include "invertfilter.h"
 #include "cgalgorithm.h"
 #include "tresholdfilter.h"
+#include "maskfilter.h"
+#include "medianfilter.h"
 
 CGMainWindow::CGMainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -122,4 +124,40 @@ void CGMainWindow::on_actionSave_activated()
         }
     }
 
+}
+
+void CGMainWindow::on_actionAverage_Filter_activated()
+{
+    MaskFilter filter(Mask::getAverageMask(3));
+    applyFilter(&filter);
+}
+
+void CGMainWindow::on_actionAverage_Filter_with_size_activated()
+{
+    bool ok;
+    int size = QInputDialog::getInt(this, "Size", "Enter size of average filter mask", 0,
+        0, 255, 1, &ok);
+    if (ok)
+    {
+        MaskFilter filter(Mask::getAverageMask(size));
+        applyFilter(&filter);
+    }
+}
+
+void CGMainWindow::on_actionMedian_Filter_activated()
+{
+    MedianFilter filter(3);
+    applyFilter(&filter);
+}
+
+void CGMainWindow::on_actionMedian_Filter_with_size_activated()
+{
+    bool ok;
+    int size = QInputDialog::getInt(this, "Size", "Enter size of median filter mask", 0,
+        0, 255, 1, &ok);
+    if (ok)
+    {
+        MedianFilter filter(size);
+        applyFilter(&filter);
+    }
 }

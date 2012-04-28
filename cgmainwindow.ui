@@ -50,6 +50,10 @@
     <addaction name="actionGrayscale"/>
     <addaction name="actionInvert_Colors"/>
     <addaction name="actionTreshold"/>
+    <addaction name="actionAverage_Filter"/>
+    <addaction name="actionAverage_Filter_with_size"/>
+    <addaction name="actionMedian_Filter"/>
+    <addaction name="actionMedian_Filter_with_size"/>
    </widget>
    <widget class="QMenu" name="menuCommands">
     <property name="title">
@@ -95,6 +99,26 @@
   <action name="actionSave">
    <property name="text">
     <string>Save...</string>
+   </property>
+  </action>
+  <action name="actionAverage_Filter">
+   <property name="text">
+    <string>Average Filter</string>
+   </property>
+  </action>
+  <action name="actionAverage_Filter_with_size">
+   <property name="text">
+    <string>Average Filter with size</string>
+   </property>
+  </action>
+  <action name="actionMedian_Filter">
+   <property name="text">
+    <string>Median Filter</string>
+   </property>
+  </action>
+  <action name="actionMedian_Filter_with_size">
+   <property name="text">
+    <string>Median Filter with size</string>
    </property>
   </action>
  </widget>

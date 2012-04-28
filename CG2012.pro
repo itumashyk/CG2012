@@ -21,7 +21,10 @@ SOURCES += main.cpp\
     dialoghistogramm.cpp \
     histogramwidget.cpp \
     cgalgorithm.cpp \
-    tresholdfilter.cpp
+    tresholdfilter.cpp \
+    maskfilter.cpp \
+    mask.cpp \
+    medianfilter.cpp
 
 HEADERS  += \
     cgapplication.h \
@@ -34,7 +37,10 @@ HEADERS  += \
     dialoghistogramm.h \
     histogramwidget.h \
     cgalgorithm.h \
-    tresholdfilter.h
+    tresholdfilter.h \
+    maskfilter.h \
+    mask.h \
+    medianfilter.h
 
 FORMS    += \
     cgmainwindow.ui \
