@@ -40,6 +40,7 @@ private slots:
     void on_actionMedian_Filter_activated();
 
     void on_actionMedian_Filter_with_size_activated();
+    void on_actionAutomatic_Treshold_activated();
 
 private:
     Ui::CGMainWindow *ui;

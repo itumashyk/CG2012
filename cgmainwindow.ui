@@ -54,6 +54,7 @@
     <addaction name="actionAverage_Filter_with_size"/>
     <addaction name="actionMedian_Filter"/>
     <addaction name="actionMedian_Filter_with_size"/>
+    <addaction name="actionAutomatic_Treshold"/>
    </widget>
    <widget class="QMenu" name="menuCommands">
     <property name="title">
@@ -119,6 +120,9 @@
   <action name="actionMedian_Filter_with_size">
    <property name="text">
     <string>Median Filter with size</string>
+  <action name="actionAutomatic_Treshold">
+   <property name="text">
+    <string>Automatic Treshold</string>
    </property>
   </action>
  </widget>

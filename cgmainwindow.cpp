@@ -11,6 +11,7 @@
 #include "tresholdfilter.h"
 #include "maskfilter.h"
 #include "medianfilter.h"
+#include "automaticbinaryfilter.h"
 
 CGMainWindow::CGMainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -65,7 +66,8 @@ void CGMainWindow::applyFilter(BaseFilter* filter)
     QMdiSubWindow *active = ui->mdiArea->activeSubWindow();
     if (active != NULL)
     {
-        MdiElement* activeElement = dynamic_cast<MdiElement*> (active->widget());
+        MdiElement* activeElement =
+            dynamic_cast<MdiElement*> (active->widget());
 
         QImage image =  activeElement->pixmap().toImage();
         QImage result = filter->process(image);
@@ -85,7 +87,8 @@ void CGMainWindow::on_actionShow_Histogram_activated()
     QMdiSubWindow *active = ui->mdiArea->activeSubWindow();
     if (active != NULL)
     {
-        MdiElement* activeElement = dynamic_cast<MdiElement*> (active->widget());
+        MdiElement* activeElement =
+            dynamic_cast<MdiElement*> (active->widget());
 
         QImage image =  activeElement->pixmap().toImage();
         if (histogramDialog == NULL)
@@ -118,7 +121,8 @@ void CGMainWindow::on_actionSave_activated()
         if (path != "")
         {
             MdiElement* activeElement = dynamic_cast<MdiElement*> (active->widget());
-            int comressionLevel = QInputDialog::getInt(this, "Compression Level", "Choose compession level", 50,
+            int comressionLevel = QInputDialog::getInt(this,
+                "Compression Level", "Choose compession level", 50,
                 0, 100, 1);
             activeElement->pixmap().save(path, 0, 100 - comressionLevel);
         }
@@ -160,4 +164,9 @@ void CGMainWindow::on_actionMedian_Filter_with_size_activated()
         MedianFilter filter(size);
         applyFilter(&filter);
     }
+
+void CGMainWindow::on_actionAutomatic_Treshold_activated()
+{
+    AutomaticBinaryFilter automaticBinaryFilter;
+    applyFilter(&automaticBinaryFilter);
 }

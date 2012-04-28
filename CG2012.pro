@@ -13,7 +13,6 @@ TEMPLATE = app
 SOURCES += main.cpp\
     cgapplication.cpp \
     bitmapfilter.cpp \
-    basefilter.cpp \
     cgmainwindow.cpp \
     mdielement.cpp \
     grayscalefilter.cpp \
@@ -25,6 +24,9 @@ SOURCES += main.cpp\
     maskfilter.cpp \
     mask.cpp \
     medianfilter.cpp
+    automaticbinaryfilter.cpp \
+    calculatepixels.cpp \
+    automaticbianarasationtreshold.cpp
 
 HEADERS  += \
     cgapplication.h \
@@ -41,11 +43,20 @@ HEADERS  += \
     maskfilter.h \
     mask.h \
     medianfilter.h
+    automaticbinaryfilter.h
 
 FORMS    += \
     cgmainwindow.ui \
     mdielement.ui \
     dialoghistogramm.ui
+
+
+
+
+
+
+
+
 
 
 

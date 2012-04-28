@@ -1,12 +1,13 @@
 #ifndef CGALGORITHM_H
 #define CGALGORITHM_H
 
-#include <QVector>
-#include <QImage>
+#include <QtCore>
+
 
 namespace CGAlgorithm
 {
-     QVector<int> calculatePixels(QImage &image);
+    int automatic_binarasation_treshold(QVector<int> data);
+    QVector<int> calculatePixels(QImage &image);
 }
 
 #endif // CGALGORITHM_H
