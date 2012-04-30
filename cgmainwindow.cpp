@@ -164,6 +164,7 @@ void CGMainWindow::on_actionMedian_Filter_with_size_activated()
         MedianFilter filter(size);
         applyFilter(&filter);
     }
+}
 
 void CGMainWindow::on_actionAutomatic_Treshold_activated()
 {

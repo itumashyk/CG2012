@@ -19,14 +19,13 @@ SOURCES += main.cpp\
     invertfilter.cpp \
     dialoghistogramm.cpp \
     histogramwidget.cpp \
-    cgalgorithm.cpp \
     tresholdfilter.cpp \
     maskfilter.cpp \
     mask.cpp \
-    medianfilter.cpp
-    automaticbinaryfilter.cpp \
+    medianfilter.cpp \
+    automaticbianarasationtreshold.cpp \
     calculatepixels.cpp \
-    automaticbianarasationtreshold.cpp
+    automaticbinaryfilter.cpp
 
 HEADERS  += \
     cgapplication.h \
@@ -42,60 +41,10 @@ HEADERS  += \
     tresholdfilter.h \
     maskfilter.h \
     mask.h \
-    medianfilter.h
+    medianfilter.h \
     automaticbinaryfilter.h
 
 FORMS    += \
     cgmainwindow.ui \
     mdielement.ui \
     dialoghistogramm.ui
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

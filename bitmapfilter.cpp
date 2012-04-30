@@ -9,7 +9,7 @@ QImage BitmapFilter::process(QImage &image)
 {
     if (image.depth() != QImage::Format_Mono)
     {
-        QMessageBox::warning(0, "Filter a bitmap", "Selected image isn't black\white");
+        QMessageBox::warning(0, "Filter a bitmap", "Selected image isn't black\\white");
         return image;
     }
     int height = image.height();

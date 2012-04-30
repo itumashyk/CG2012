@@ -120,6 +120,8 @@
   <action name="actionMedian_Filter_with_size">
    <property name="text">
     <string>Median Filter with size</string>
+   </property>
+  </action>
   <action name="actionAutomatic_Treshold">
    <property name="text">
     <string>Automatic Treshold</string>

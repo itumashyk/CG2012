@@ -1,4 +1,5 @@
 #include "maskfilter.h"
+#include <stdexcept>
 
 MaskFilter::MaskFilter()
 {
@@ -63,4 +64,10 @@ int MaskFilter::mirror(int max, int cur)
     {
         return max - (cur - max + 1);
     }
+
+
+    //TODO: no return statment.
+    throw std::logic_error(
+        "No return statment in MaskFilter::mirror");
+    return 0;
 }

@@ -1,6 +1,7 @@
 #include "medianfilter.h"
 #include <QVector>
 #include <QtAlgorithms>
+#include <stdexcept>
 MedianFilter::MedianFilter()
 {
 }
@@ -63,6 +64,12 @@ int MedianFilter::mirror(int max, int cur)
     {
         return max - (cur - max + 1);
     }
+
+    //TODO: No return statment.
+    throw std::logic_error(
+        "No return statment in MedianFilter::mirror");
+
+    return 0;
 }
 
 

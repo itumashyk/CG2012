@@ -61,7 +61,9 @@ void  HistogramWidget::paintEvent (QPaintEvent* event)
          for(int i = 0; i < 256; i++)
          {
             int x1 = per1 * i;
-            int x2 = x1 + per1;
+
+            //TODO: Unused variable.
+            //int x2 = x1 + per1;
             int y = h - (int)(h * data[i]) + 5;
             painter.fillRect(x1 + dx, y, per1, (h * data[i]), brush);
          }

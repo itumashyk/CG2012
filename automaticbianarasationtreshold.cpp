@@ -1,5 +1,4 @@
 #include "cgalgorithm.h"
-#include <QDebug>
 
 namespace CGAlgorithm
 {
@@ -10,8 +9,6 @@ namespace CGAlgorithm
 int CGAlgorithm::automatic_binarasation_treshold(QVector<int> data)
 {
     int imax1 = -1, imax2 = -1, imin;
-
-    qDebug() << data;
 
     for (int i = 0; i < data.size(); i++)
     {
