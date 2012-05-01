@@ -66,8 +66,6 @@ int MedianFilter::mirror(int max, int cur)
     }
 
     //TODO: No return statment.
-    throw std::logic_error(
-        "No return statment in MedianFilter::mirror");
 
     return 0;
 }
