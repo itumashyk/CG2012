@@ -29,7 +29,8 @@ SOURCES += main.cpp\
     histogrammsegmentation.cpp \
     reducecolorcountfilter.cpp \
     bzh_classes/segment.cpp \
-    watershedfilter.cpp
+    watershedfilter.cpp \
+    mygraphicsview.cpp
 
 HEADERS  += \
     cgapplication.h \
@@ -50,7 +51,8 @@ HEADERS  += \
     histogrammsegmentation.h \
     reducecolorcountfilter.h \
     bzh_classes/segment.h \
-    watershedfilter.h
+    watershedfilter.h \
+    mygraphicsview.h
 
 FORMS    += \
     cgmainwindow.ui \

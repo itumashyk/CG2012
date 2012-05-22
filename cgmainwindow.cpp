@@ -73,6 +73,7 @@ void CGMainWindow::applyFilter(BaseFilter* filter)
             dynamic_cast<MdiElement*> (active->widget());
 
         QImage image =  activeElement->pixmap().toImage();
+        // TODO : add locale image processing
         QImage result = filter->process(image);
         QPixmap pixmap = QPixmap::fromImage(result);
         activeElement->setPixmap(pixmap);
