@@ -27,7 +27,9 @@ SOURCES += main.cpp\
     calculatepixels.cpp \
     automaticbinaryfilter.cpp \
     histogrammsegmentation.cpp \
-    reducecolorcountfilter.cpp
+    reducecolorcountfilter.cpp \
+    bzh_classes/segment.cpp \
+    watershedfilter.cpp
 
 HEADERS  += \
     cgapplication.h \
@@ -46,12 +48,18 @@ HEADERS  += \
     medianfilter.h \
     automaticbinaryfilter.h \
     histogrammsegmentation.h \
-    reducecolorcountfilter.h
+    reducecolorcountfilter.h \
+    bzh_classes/segment.h \
+    watershedfilter.h
 
 FORMS    += \
     cgmainwindow.ui \
     mdielement.ui \
     dialoghistogramm.ui
+
+
+
+
 
 
 

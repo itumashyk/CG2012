@@ -14,6 +14,7 @@
 #include "automaticbinaryfilter.h"
 #include "histogrammsegmentation.h"
 #include "reducecolorcountfilter.h"
+#include "watershedfilter.h"
 
 CGMainWindow::CGMainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -197,4 +198,18 @@ void CGMainWindow::on_actionReduce_color_count_activated()
         ReduceColorCountFilter filter(num);
         applyFilter(&filter);
     }
+}
+
+void CGMainWindow::on_actionWatershed_segmentation_activated()
+{
+    bool ok= true;
+    int num = QInputDialog::getInt(this, "Treshold",
+                                      "Treshold:", 0, 1, 255, 1, &ok);
+
+    if (ok)
+    {
+        WatershedFilter filter(num);
+        applyFilter(&filter);
+    }
+
 }

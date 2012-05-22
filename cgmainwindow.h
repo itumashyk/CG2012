@@ -46,6 +46,8 @@ private slots:
 
     void on_actionReduce_color_count_activated();
 
+    void on_actionWatershed_segmentation_activated();
+
 private:
     Ui::CGMainWindow *ui;
     void applyFilter(BaseFilter *filter);
