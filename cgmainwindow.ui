@@ -62,8 +62,15 @@
     </property>
     <addaction name="actionShow_Histogram"/>
    </widget>
+   <widget class="QMenu" name="menuSegmentation">
+    <property name="title">
+     <string>Segmentation</string>
+    </property>
+    <addaction name="actionHistogramm_segmentation"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuFilter"/>
+   <addaction name="menuSegmentation"/>
    <addaction name="menuCommands"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -125,6 +132,11 @@
   <action name="actionAutomatic_Treshold">
    <property name="text">
     <string>Automatic Treshold</string>
+   </property>
+  </action>
+  <action name="actionHistogramm_segmentation">
+   <property name="text">
+    <string>Histogramm segmentation...</string>
    </property>
   </action>
  </widget>

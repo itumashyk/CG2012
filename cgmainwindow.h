@@ -42,6 +42,8 @@ private slots:
     void on_actionMedian_Filter_with_size_activated();
     void on_actionAutomatic_Treshold_activated();
 
+    void on_actionHistogramm_segmentation_activated();
+
 private:
     Ui::CGMainWindow *ui;
     void applyFilter(BaseFilter *filter);

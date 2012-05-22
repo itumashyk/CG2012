@@ -25,7 +25,8 @@ SOURCES += main.cpp\
     medianfilter.cpp \
     automaticbianarasationtreshold.cpp \
     calculatepixels.cpp \
-    automaticbinaryfilter.cpp
+    automaticbinaryfilter.cpp \
+    histogrammsegmentation.cpp
 
 HEADERS  += \
     cgapplication.h \
@@ -42,9 +43,12 @@ HEADERS  += \
     maskfilter.h \
     mask.h \
     medianfilter.h \
-    automaticbinaryfilter.h
+    automaticbinaryfilter.h \
+    histogrammsegmentation.h
 
 FORMS    += \
     cgmainwindow.ui \
     mdielement.ui \
     dialoghistogramm.ui
+
+

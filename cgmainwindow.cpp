@@ -12,6 +12,7 @@
 #include "maskfilter.h"
 #include "medianfilter.h"
 #include "automaticbinaryfilter.h"
+#include "histogrammsegmentation.h"
 
 CGMainWindow::CGMainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -170,4 +171,16 @@ void CGMainWindow::on_actionAutomatic_Treshold_activated()
 {
     AutomaticBinaryFilter automaticBinaryFilter;
     applyFilter(&automaticBinaryFilter);
+}
+
+void CGMainWindow::on_actionHistogramm_segmentation_activated()
+{
+    bool ok;
+    int result = QInputDialog::getInt(this, "Histogramm smoothing number",
+        "Histogramm smoothing number", 0, 1, 51, 1,&ok);
+
+    if (ok){
+        HistogrammSegmentation filter(result);
+        applyFilter(&filter);
+    }
 }
