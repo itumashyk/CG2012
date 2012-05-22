@@ -44,6 +44,8 @@ private slots:
 
     void on_actionHistogramm_segmentation_activated();
 
+    void on_actionReduce_color_count_activated();
+
 private:
     Ui::CGMainWindow *ui;
     void applyFilter(BaseFilter *filter);

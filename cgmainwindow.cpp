@@ -13,6 +13,7 @@
 #include "medianfilter.h"
 #include "automaticbinaryfilter.h"
 #include "histogrammsegmentation.h"
+#include "reducecolorcountfilter.h"
 
 CGMainWindow::CGMainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -179,8 +180,21 @@ void CGMainWindow::on_actionHistogramm_segmentation_activated()
     int result = QInputDialog::getInt(this, "Histogramm smoothing number",
         "Histogramm smoothing number", 0, 1, 51, 1,&ok);
 
-    if (ok){
+    if (ok)
+    {
         HistogrammSegmentation filter(result);
+        applyFilter(&filter);
+    }
+}
+
+void CGMainWindow::on_actionReduce_color_count_activated()
+{
+    bool ok;
+    int num = QInputDialog::getInt(this, "Color count",
+        "Color count:", 0, 1, 51, 1,&ok);
+    if (ok)
+    {
+        ReduceColorCountFilter filter(num);
         applyFilter(&filter);
     }
 }

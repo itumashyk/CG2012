@@ -55,6 +55,7 @@
     <addaction name="actionMedian_Filter"/>
     <addaction name="actionMedian_Filter_with_size"/>
     <addaction name="actionAutomatic_Treshold"/>
+    <addaction name="actionReduce_color_count"/>
    </widget>
    <widget class="QMenu" name="menuCommands">
     <property name="title">
@@ -137,6 +138,11 @@
   <action name="actionHistogramm_segmentation">
    <property name="text">
     <string>Histogramm segmentation...</string>
+   </property>
+  </action>
+  <action name="actionReduce_color_count">
+   <property name="text">
+    <string>Reduce color count...</string>
    </property>
   </action>
  </widget>
