@@ -21,7 +21,7 @@ void MyGraphicsView::mouseReleaseEvent(QMouseEvent * event)
 {
     pressed = false;
     QPolygonF polygon = mapToScene(QRect(selectionStart, event->pos()));
-    int i = polygon.count();
+   // int i = polygon.count();
 //    rubberBand->hide();
     event->accept();
 }
