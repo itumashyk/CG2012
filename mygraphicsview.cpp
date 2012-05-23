@@ -14,6 +14,7 @@ void MyGraphicsView::mousePressEvent(QMouseEvent * event)
     rubberBand = new QRubberBand(QRubberBand::Rectangle, this);//new rectangle band
     rubberBand->setGeometry(QRect(selectionStart, QSize()));
     rubberBand->show();
+    rubberBandShown = true;
     event->accept();
 }
 
@@ -21,7 +22,7 @@ void MyGraphicsView::mouseReleaseEvent(QMouseEvent * event)
 {
     pressed = false;
     QPolygonF polygon = mapToScene(QRect(selectionStart, event->pos()));
-    int i = polygon.count();
+    selectionRect = polygon.boundingRect();
 //    rubberBand->hide();
     event->accept();
 }
@@ -32,4 +33,15 @@ void MyGraphicsView::mouseMoveEvent(QMouseEvent * event)
         rubberBand->setGeometry(QRect(selectionStart, event->pos()).normalized());
         event->accept();
     }
+}
+
+void MyGraphicsView::hideRubberBand()
+{
+    rubberBand->hide();
+    rubberBandShown = false;
+}
+
+bool MyGraphicsView::isRubberBandShown()
+{
+    return rubberBandShown;
 }

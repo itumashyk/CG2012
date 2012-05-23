@@ -8,7 +8,7 @@ namespace CGAlgorithm
 
 int CGAlgorithm::automatic_binarasation_treshold(QVector<int> data)
 {
-    int imax1 = -1, imax2 = -1, imin;
+    int imax1 = 0, imax2 = 0, imin;
 
     for (int i = 0; i < data.size(); i++)
     {

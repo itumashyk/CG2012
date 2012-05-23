@@ -3,6 +3,7 @@
 
 #include <QMdiSubWindow>
 #include <QGraphicsPixmapItem>
+#include <QRectF>
 
 namespace Ui {
     class MdiElement;
@@ -18,9 +19,13 @@ public:
 
     QPixmap pixmap();
     void setPixmap(const QPixmap &pixmap);
+    void hideRubberBand();
+    bool isRubberBandVisible();
+    QRectF getSelectionRect();
 
 protected:
     virtual void wheelEvent(QWheelEvent * event);
+
 
 private:
     QGraphicsPixmapItem *curPixmap;

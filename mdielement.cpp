@@ -3,6 +3,7 @@
 #include "QDebug"
 #include <QFileDialog>
 #include <bitmapfilter.h>
+#include <mygraphicsview.h>
 
 MdiElement::MdiElement(QWidget *parent) :
     QWidget(parent),
@@ -31,7 +32,15 @@ void MdiElement::setPixmap(const QPixmap &pixmap)
     ui->graphicsView->invalidateScene();
 }
 
+void MdiElement::hideRubberBand()
+{
+    ((MyGraphicsView*) ui->graphicsView)->hideRubberBand();
+}
 
+bool MdiElement::isRubberBandVisible()
+{
+    return ((MyGraphicsView*) ui->graphicsView)->isRubberBandShown();
+}
 
 void MdiElement:: wheelEvent(QWheelEvent * event)
 {
@@ -45,3 +54,7 @@ void MdiElement:: wheelEvent(QWheelEvent * event)
     //event->ignore();
 }
 
+QRectF MdiElement::getSelectionRect()
+{
+    return ((MyGraphicsView*) ui->graphicsView)->selectionRect;
+}

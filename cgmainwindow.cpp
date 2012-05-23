@@ -74,9 +74,26 @@ void CGMainWindow::applyFilter(BaseFilter* filter)
 
         QImage image =  activeElement->pixmap().toImage();
         // TODO : add locale image processing
-        QImage result = filter->process(image);
+        QImage result;
+        if (!activeElement->isRubberBandVisible()) {
+            result = filter->process(image);
+        } else {
+            QRectF selection = activeElement->getSelectionRect();
+            QRect boundingRect = QRect(selection.left(), selection.top(), selection.width(), selection.height());
+            QImage toProcess = image.copy(boundingRect);
+            QImage areaResult = filter->process(toProcess);
+            result = image;
+            for (int i = boundingRect.left(); i < boundingRect.right(); ++i) {
+                for (int j = boundingRect.top(); j < boundingRect.bottom(); ++j) {
+                    result.setPixel(i, j, areaResult.pixel(i - boundingRect.left(), j - boundingRect.top()));
+                }
+            }
+            activeElement->hideRubberBand();
+
+        }
         QPixmap pixmap = QPixmap::fromImage(result);
         activeElement->setPixmap(pixmap);
+
     }
 }
 
