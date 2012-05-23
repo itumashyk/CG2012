@@ -68,7 +68,6 @@
      <string>Segmentation</string>
     </property>
     <addaction name="actionHistogramm_segmentation"/>
-    <addaction name="actionWatershed_segmentation"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuFilter"/>
@@ -144,11 +143,6 @@
   <action name="actionReduce_color_count">
    <property name="text">
     <string>Reduce color count...</string>
-   </property>
-  </action>
-  <action name="actionWatershed_segmentation">
-   <property name="text">
-    <string>Watershed segmentation...</string>
    </property>
   </action>
  </widget>
