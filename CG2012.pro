@@ -28,7 +28,6 @@ SOURCES += main.cpp\
     automaticbinaryfilter.cpp \
     histogrammsegmentation.cpp \
     reducecolorcountfilter.cpp \
-    bzh_classes/segment.cpp \
     mygraphicsview.cpp
 
 HEADERS  += \
@@ -49,13 +48,14 @@ HEADERS  += \
     automaticbinaryfilter.h \
     histogrammsegmentation.h \
     reducecolorcountfilter.h \
-    bzh_classes/segment.h \
     mygraphicsview.h
 
 FORMS    += \
     cgmainwindow.ui \
     mdielement.ui \
     dialoghistogramm.ui
+
+
 
 
 
