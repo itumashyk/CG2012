@@ -46,6 +46,8 @@ private slots:
 
     void on_actionReduce_color_count_activated();
 
+    void on_actionFilter_by_mask_activated();
+
 private:
     Ui::CGMainWindow *ui;
     void applyFilter(BaseFilter *filter);

@@ -6,7 +6,7 @@
 
     int height = image.height();
     int width = image.width();
-    QImage res(image.size(), QImage::Format_ARGB32);
+    QImage res(image.size(), image.format());
     for (int i = 0; i < width; ++i)
     {
         for (int j = 0; j < height; ++j)

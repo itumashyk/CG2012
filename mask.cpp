@@ -4,7 +4,7 @@ Mask::Mask(){
 
 }
 
-Mask::Mask(QVector<QVector<int> > & aMatrix)
+Mask::Mask(QVector<QVector<int> > aMatrix)
 {
     matrix = aMatrix;
     sum = 0;

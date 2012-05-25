@@ -56,6 +56,7 @@
     <addaction name="actionMedian_Filter_with_size"/>
     <addaction name="actionAutomatic_Treshold"/>
     <addaction name="actionReduce_color_count"/>
+    <addaction name="actionFilter_by_mask"/>
    </widget>
    <widget class="QMenu" name="menuCommands">
     <property name="title">
@@ -143,6 +144,11 @@
   <action name="actionReduce_color_count">
    <property name="text">
     <string>Reduce color count...</string>
+   </property>
+  </action>
+  <action name="actionFilter_by_mask">
+   <property name="text">
+    <string>Filter by mask</string>
    </property>
   </action>
  </widget>

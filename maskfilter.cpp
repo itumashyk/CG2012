@@ -6,16 +6,17 @@ MaskFilter::MaskFilter()
 
 }
 
-MaskFilter::MaskFilter(const Mask& aMask)
+MaskFilter::MaskFilter(Mask aMask)
 {
     mask = aMask;
+
 }
 
 QImage MaskFilter::process(QImage& image)
 {
     int height = image.height();
     int width = image.width();
-    QImage res(image.size(), QImage::Format_ARGB32);
+    QImage res(image.size(), image.format());
     for (int i = 0; i < width; ++i)
     {
         for (int j = 0; j < height; ++j)
@@ -67,5 +68,5 @@ int MaskFilter::mirror(int max, int cur)
 
 
     //TODO: no return statment.
-    return 0;
+    return cur;
 }

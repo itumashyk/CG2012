@@ -14,6 +14,7 @@
 #include "automaticbinaryfilter.h"
 #include "histogrammsegmentation.h"
 #include "reducecolorcountfilter.h"
+#include "qmaskdialog.h"
 
 CGMainWindow::CGMainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -79,6 +80,7 @@ void CGMainWindow::applyFilter(BaseFilter* filter)
         } else {
             QRectF selection = activeElement->getSelectionRect();
             QRect boundingRect = QRect(selection.left(), selection.top(), selection.width(), selection.height());
+            boundingRect = boundingRect.intersect(image.rect());
             QImage toProcess = image.copy(boundingRect);
             QImage areaResult = filter->process(toProcess);
             result = image;
@@ -217,4 +219,20 @@ void CGMainWindow::on_actionReduce_color_count_activated()
     }
 }
 
+void CGMainWindow::on_actionFilter_by_mask_activated()
+{
+    bool ok;
+    int num = QInputDialog::getInt(this, "Mask size",
+        "Mask size:", 3, 3, 51, 2, &ok);
+    if (ok)
+    {
+        QMaskDialog * dialog = new QMaskDialog(num, this);
+        if (dialog->exec())
+        {
+            Mask mask(dialog->getCoeff());
+            MaskFilter filter(mask);
+            applyFilter(&filter);
+        }
 
+    }
+}

@@ -7,7 +7,7 @@ class Mask
 {
 public:
     Mask();
-    Mask(QVector<QVector<int> > &);
+    Mask(QVector<QVector<int> >);
     int getSum();
     int getItem(int, int);
     int getSize();

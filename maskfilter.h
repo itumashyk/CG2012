@@ -7,7 +7,7 @@ class MaskFilter : public BaseFilter
 {
 public:
     MaskFilter();
-    MaskFilter(const Mask& aMask);
+    MaskFilter(Mask aMask);
     virtual QImage process(QImage& image);
     int getMaskPixel(QImage & image, int x, int y);
     int mirror(int max, int cur);
