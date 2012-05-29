@@ -29,7 +29,9 @@ SOURCES += main.cpp\
     histogrammsegmentation.cpp \
     reducecolorcountfilter.cpp \
     mygraphicsview.cpp \
-    qmaskdialog.cpp
+    qmaskdialog.cpp \
+    scanlinebinaryfilter.cpp \
+    scanlinegrayfilter.cpp
 
 HEADERS  += \
     cgapplication.h \
@@ -50,7 +52,9 @@ HEADERS  += \
     histogrammsegmentation.h \
     reducecolorcountfilter.h \
     mygraphicsview.h \
-    qmaskdialog.h
+    qmaskdialog.h \
+    scanlinebinaryfilter.h \
+    scanlinegrayfilter.h
 
 FORMS    += \
     cgmainwindow.ui \

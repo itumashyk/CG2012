@@ -70,10 +70,18 @@
     </property>
     <addaction name="actionHistogramm_segmentation"/>
    </widget>
+   <widget class="QMenu" name="menuContour_selection">
+    <property name="title">
+     <string>Contour selection</string>
+    </property>
+    <addaction name="actionScan_line_for_binary"/>
+    <addaction name="actionScan_line_for_gray"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuFilter"/>
    <addaction name="menuSegmentation"/>
    <addaction name="menuCommands"/>
+   <addaction name="menuContour_selection"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionOpen">
@@ -149,6 +157,16 @@
   <action name="actionFilter_by_mask">
    <property name="text">
     <string>Filter by mask</string>
+   </property>
+  </action>
+  <action name="actionScan_line_for_binary">
+   <property name="text">
+    <string>Scan line for binary</string>
+   </property>
+  </action>
+  <action name="actionScan_line_for_gray">
+   <property name="text">
+    <string>Scan line for gray</string>
    </property>
   </action>
  </widget>
