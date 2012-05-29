@@ -14,6 +14,8 @@
 #include "automaticbinaryfilter.h"
 #include "histogrammsegmentation.h"
 #include "reducecolorcountfilter.h"
+#include "scanlinebinaryfilter.h"
+#include "scanlinegrayfilter.h"
 #include "qmaskdialog.h"
 #include "zhuckfilter.h"
 
@@ -242,4 +244,22 @@ void CGMainWindow::on_action_Zhuk_activated()
 {
     ZhuckFilter zhuckFilter;
     applyFilter(&zhuckFilter);
+}
+
+void CGMainWindow::on_actionScan_line_for_binary_activated()
+{
+    ScanLineBinaryFilter scanLineBinFilter;
+    applyFilter(&scanLineBinFilter);
+}
+
+void CGMainWindow::on_actionScan_line_for_gray_activated()
+{
+    bool ok;
+    int threshold = QInputDialog::getInt(this, "Threshold for scan line",
+                                         "Threshold:", 100, 1, 255, 1, &ok);
+    if (ok)
+    {
+        ScanLineGrayFilter filter(threshold);
+        applyFilter(&filter);
+    }
 }
