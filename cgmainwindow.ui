@@ -69,6 +69,7 @@
      <string>Segmentation</string>
     </property>
     <addaction name="actionHistogramm_segmentation"/>
+    <addaction name="action_Zhuk"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuFilter"/>
@@ -149,6 +150,11 @@
   <action name="actionFilter_by_mask">
    <property name="text">
     <string>Filter by mask</string>
+   </property>
+  </action>
+  <action name="action_Zhuk">
+   <property name="text">
+    <string>&quot;Zhuk&quot;</string>
    </property>
   </action>
  </widget>

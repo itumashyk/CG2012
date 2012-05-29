@@ -29,7 +29,8 @@ SOURCES += main.cpp\
     histogrammsegmentation.cpp \
     reducecolorcountfilter.cpp \
     mygraphicsview.cpp \
-    qmaskdialog.cpp
+    qmaskdialog.cpp \
+    zhuckfilter.cpp
 
 HEADERS  += \
     cgapplication.h \
@@ -50,13 +51,16 @@ HEADERS  += \
     histogrammsegmentation.h \
     reducecolorcountfilter.h \
     mygraphicsview.h \
-    qmaskdialog.h
+    qmaskdialog.h \
+    zhuckfilter.h
 
 FORMS    += \
     cgmainwindow.ui \
     mdielement.ui \
     dialoghistogramm.ui \
     qmaskdialog.ui
+
+
 
 
 

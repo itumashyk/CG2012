@@ -48,6 +48,8 @@ private slots:
 
     void on_actionFilter_by_mask_activated();
 
+    void on_action_Zhuk_activated();
+
 private:
     Ui::CGMainWindow *ui;
     void applyFilter(BaseFilter *filter);
