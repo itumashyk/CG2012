@@ -75,6 +75,7 @@ bool ImageMatrix::containLeftTopAlignedSymbol(int x, int y, int width, int heigh
     {
         return false;
     }
+    contain = false;
 
     // left
     for (int j = y; j < y + height; ++j)

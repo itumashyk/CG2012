@@ -8,7 +8,7 @@ CharacterRecognizator::CharacterRecognizator(QImage & aImage)
     height = aImage.height();
     for (char ch = 'a'; ch <= 'z'; ++ch)
     {
-        QPixmap pixmap("c:\\Users\\dev_il\\univer\\New_CG\\CG2012\\IMAGES\\" + QString(ch) + ".png");
+        QPixmap pixmap("images\\" + QString(ch) + ".png");
         ethalons.append(ImageMatrix(pixmap.toImage()));
     }
 }
