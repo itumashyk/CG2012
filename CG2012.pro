@@ -32,7 +32,9 @@ SOURCES += main.cpp\
     qmaskdialog.cpp \
     zhuckfilter.cpp \
     scanlinebinaryfilter.cpp \
-    scanlinegrayfilter.cpp
+    scanlinegrayfilter.cpp \
+    characterrecognizator.cpp \
+    imagematrix.cpp
 
 HEADERS  += \
     cgapplication.h \
@@ -56,7 +58,9 @@ HEADERS  += \
     qmaskdialog.h \
     zhuckfilter.h \
     scanlinebinaryfilter.h \
-    scanlinegrayfilter.h
+    scanlinegrayfilter.h \
+    characterrecognizator.h \
+    imagematrix.h
 
 
 FORMS    += \
@@ -64,6 +68,34 @@ FORMS    += \
     mdielement.ui \
     dialoghistogramm.ui \
     qmaskdialog.ui
+
+OTHER_FILES += \
+    IMAGES/z.png \
+    IMAGES/y.png \
+    IMAGES/x.png \
+    IMAGES/w.png \
+    IMAGES/v.png \
+    IMAGES/u.png \
+    IMAGES/t.png \
+    IMAGES/s.png \
+    IMAGES/r.png \
+    IMAGES/q.png \
+    IMAGES/p.png \
+    IMAGES/o.png \
+    IMAGES/n.png \
+    IMAGES/m.png \
+    IMAGES/l.png \
+    IMAGES/k.png \
+    IMAGES/j.png \
+    IMAGES/i.png \
+    IMAGES/h.png \
+    IMAGES/g.png \
+    IMAGES/f.png \
+    IMAGES/e.png \
+    IMAGES/d.png \
+    IMAGES/c.png \
+    IMAGES/b.png \
+    IMAGES/a.png
 
 
 

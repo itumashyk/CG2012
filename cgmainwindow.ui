@@ -78,11 +78,18 @@
     <addaction name="actionScan_line_for_binary"/>
     <addaction name="actionScan_line_for_gray"/>
    </widget>
+   <widget class="QMenu" name="menuRecognization">
+    <property name="title">
+     <string>Recognization</string>
+    </property>
+    <addaction name="actionRecognize_text"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuFilter"/>
    <addaction name="menuSegmentation"/>
    <addaction name="menuCommands"/>
    <addaction name="menuContour_selection"/>
+   <addaction name="menuRecognization"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionOpen">
@@ -173,6 +180,11 @@
   <action name="actionScan_line_for_gray">
    <property name="text">
     <string>Scan line for gray</string>
+   </property>
+  </action>
+  <action name="actionRecognize_text">
+   <property name="text">
+    <string>Recognize text</string>
    </property>
   </action>
  </widget>
