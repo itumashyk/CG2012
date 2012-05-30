@@ -16,6 +16,7 @@
 #include "reducecolorcountfilter.h"
 #include "scanlinebinaryfilter.h"
 #include "scanlinegrayfilter.h"
+#include "characterrecognizator.h"
 #include "qmaskdialog.h"
 
 CGMainWindow::CGMainWindow(QWidget *parent) :
@@ -43,8 +44,6 @@ void CGMainWindow::on_actionOpen_activated()
 
      if (!file.isNull())
      {
-
-
          QPixmap pixmap(file);
          MdiElement* element = new MdiElement();
          element->setPixmap(pixmap);
@@ -75,7 +74,6 @@ void CGMainWindow::applyFilter(BaseFilter* filter)
             dynamic_cast<MdiElement*> (active->widget());
 
         QImage image =  activeElement->pixmap().toImage();
-        // TODO : add locale image processing
         QImage result;
         if (!activeElement->isRubberBandVisible()) {
             result = filter->process(image);
@@ -254,5 +252,21 @@ void CGMainWindow::on_actionScan_line_for_gray_activated()
     {
         ScanLineGrayFilter filter(threshold);
         applyFilter(&filter);
+    }
+}
+
+void CGMainWindow::on_actionRecognize_text_activated()
+{
+    QMdiSubWindow *active = ui->mdiArea->activeSubWindow();
+    if (active != NULL)
+    {
+        MdiElement* activeElement =
+            dynamic_cast<MdiElement*> (active->widget());
+
+        QImage image =  activeElement->pixmap().toImage();
+        CharacterRecognizator recognizator(image);
+//        recognizator.recognize();
+        QMessageBox::information(this, "Recognization result",
+                                 recognizator.recognize(), QMessageBox::Ok);
     }
 }

@@ -52,6 +52,8 @@ private slots:
 
     void on_actionScan_line_for_gray_activated();
 
+    void on_actionRecognize_text_activated();
+
 private:
     Ui::CGMainWindow *ui;
     void applyFilter(BaseFilter *filter);
