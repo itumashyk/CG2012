@@ -69,6 +69,7 @@
      <string>Segmentation</string>
     </property>
     <addaction name="actionHistogramm_segmentation"/>
+    <addaction name="action_Zhuk"/>
    </widget>
    <widget class="QMenu" name="menuContour_selection">
     <property name="title">
@@ -165,6 +166,11 @@
    <property name="text">
     <string>Filter by mask</string>
    </property>
+  </action>
+  <action name="action_Zhuk">
+   <property name="text">
+    <string>&quot;Zhuk&quot;</string>
+  </property>
   </action>
   <action name="actionScan_line_for_binary">
    <property name="text">

@@ -18,6 +18,7 @@
 #include "scanlinegrayfilter.h"
 #include "characterrecognizator.h"
 #include "qmaskdialog.h"
+#include "zhuckfilter.h"
 
 CGMainWindow::CGMainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -235,6 +236,12 @@ void CGMainWindow::on_actionFilter_by_mask_activated()
         }
 
     }
+}
+
+void CGMainWindow::on_action_Zhuk_activated()
+{
+    ZhuckFilter zhuckFilter;
+    applyFilter(&zhuckFilter);
 }
 
 void CGMainWindow::on_actionScan_line_for_binary_activated()

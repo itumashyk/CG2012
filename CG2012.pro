@@ -30,6 +30,7 @@ SOURCES += main.cpp\
     reducecolorcountfilter.cpp \
     mygraphicsview.cpp \
     qmaskdialog.cpp \
+    zhuckfilter.cpp \
     scanlinebinaryfilter.cpp \
     scanlinegrayfilter.cpp \
     characterrecognizator.cpp \
@@ -55,10 +56,12 @@ HEADERS  += \
     reducecolorcountfilter.h \
     mygraphicsview.h \
     qmaskdialog.h \
+    zhuckfilter.h \
     scanlinebinaryfilter.h \
     scanlinegrayfilter.h \
     characterrecognizator.h \
     imagematrix.h
+
 
 FORMS    += \
     cgmainwindow.ui \
@@ -93,6 +96,8 @@ OTHER_FILES += \
     IMAGES/c.png \
     IMAGES/b.png \
     IMAGES/a.png
+
+
 
 
 

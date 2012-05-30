@@ -48,6 +48,7 @@ private slots:
 
     void on_actionFilter_by_mask_activated();
 
+    void on_action_Zhuk_activated();
     void on_actionScan_line_for_binary_activated();
 
     void on_actionScan_line_for_gray_activated();
