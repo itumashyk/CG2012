@@ -29,9 +29,9 @@ QString CharacterRecognizator::recognize()
     }
     QString result = "";
 
-    for (int j = 0; j + wWidth < width; ++j)
+    for (int i = 0; i + wHeight < height; ++i)
     {
-        for (int i = 0; i + wHeight < height; ++i)
+        for (int j = 0; j + wWidth < width; ++j)
         {
             if (isUnfilledArea(filled, j, i, wWidth, wHeight))
             {
